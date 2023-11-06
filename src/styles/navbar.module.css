@@ -1,0 +1,40 @@
+
+
+.navbar {
+    background-color: rgb(255,255,255,0.1);
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    z-index: 111;
+
+}
+.navwrapper{
+    width: 90%;
+    height: max-content;
+    background-color: red;
+    background-color: transparent;
+    display: flex;
+    gap: 10px;
+    padding: 20px 10px;    
+}
+.navlinks{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.navlink{
+    display: flex;
+    padding: 5px  ;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

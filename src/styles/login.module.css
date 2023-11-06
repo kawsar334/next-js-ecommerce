@@ -1,0 +1,49 @@
+.login {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+    gap: 10px;
+}
+
+.loginheader {
+    margin: 10px;
+}
+
+.loginForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    outline: none;
+    width: 300px;
+
+
+
+
+}
+
+.loginbtn {
+    padding: 10px;
+    border: 1px solid lightgray;
+    width: 300px;
+    border-radius: 5px;
+    background-color: teal;
+    cursor: pointer;
+    
+
+}
+
+.loginLink {
+    margin: 10px 0px;
+}
