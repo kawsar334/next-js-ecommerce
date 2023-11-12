@@ -1,22 +1,38 @@
 "use client"
 
-import Image from 'next/image'
-import styles from './page.module.css'
+import AddItemCart from '@/components/addItemCard/AddItemCart'
+import Features from '@/components/features/Features'
+import Footer from '@/components/footer/Footer'
+import Hero from '@/components/hero/Hero'
+import NavTwo from '@/components/navbar/NavTwo'
 import Navbar from '@/components/navbar/Navbar'
-import Footer from '@/components/footer/Footer';
-import useSWR from 'swr'
-import { useSession } from 'next-auth/react';
-import Products from '@/components/products/Products';
+import Products from '@/components/products/Products'
+import Image from 'next/image'
 
-export default function Home() {
+const getData = async () => {
+  try {
 
-  const fetcher = (...args) => fetch(...args).then(res => res.json())
-  const { data, error, isLoading } = useSWR('https://dummyjson.com/products', fetcher);
-  const session = useSession();
-  console.log( session)
+    const res = await fetch("https://fakestoreapi.com/products", { cache: "no-cache" })
+    const data = await res.json();
+    return data
+
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export default async function Home() {
+  const data = await getData();
+
   return (
-    <main className={styles.main}>
-        <Products/>
-    </main> 
+    <div >
+      <Navbar />
+      <NavTwo />
+      <Hero />
+      <Features  data={data}/>
+      <Products  data={data}/>
+      <AddItemCart/>
+      <Footer />
+    </div>
   )
 }
